@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tres Empanadas — Monte Hermoso</title>
+
+  <!-- Fuentes (puedes cambiarlas) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --blanco: #ffffff;
+      --negro: #000000;
+      --gris: #6f6f6f;           /* texto secundario */
+      --gris-claro: #efefef;     /* fondos suaves */
+      --bordo-claro: #A45A5A;    /* acento bordo claro */
+      --max-width: 1100px;
+      --radius: 10px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    /* Reset simple */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--negro);
+      background:var(--blanco);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+
+    /* Contenedor */
+    .wrap{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:24px;
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--negro);
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background:linear-gradient(135deg,var(--bordo-claro),#7f3c3c);
+      display:flex;align-items:center;justify-content:center;color:var(--blanco);
+      font-weight:700;box-shadow:var(--shadow);
+    }
+    nav ul{
+      display:flex;
+      gap:18px;
+      list-style:none;
+      align-items:center;
+    }
+    nav a{ text-decoration:none; color:var(--negro); font-weight:600 }
+    .btn-wsp{
+      background:var(--bordo-claro);
+      color:var(--blanco);
+      padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;
+      box-shadow:var(--shadow);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:32px;
+      align-items:center;
+      margin:28px 0 36px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), var(--blanco));
+      padding:28px;border-radius:16px;box-shadow:var(--shadow);
+    }
+    .hero h1{ font-size:2.2rem; margin-bottom:10px; }
+    .hero p{ color:var(--gris); margin-bottom:18px; }
+    .hero .cta-group{ display:flex; gap:12px; align-items:center; }
+    .btn-primary{
+      background:var(--bordo-claro);
+      color:var(--blanco); padding:12px 18px; border-radius:10px;
+      text-decoration:none; font-weight:700;
+    }
+    .btn-secondary{
+      background:transparent;border:2px solid var(--negro);padding:10px 16px;border-radius:10px;text-decoration:none;color:var(--negro);font-weight:700;
+    }
+
+    .hero-visual{
+      border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
+    }
+    .hero-visual img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* Secciones */
+    section{ margin:28px 0; }
+    .cards{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+    .card{ background:var(--gris-claro); padding:14px; border-radius:12px; text-align:center; }
+    .card img{ width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:10px; }
+    .card h4{ margin-bottom:6px; }
+    .price{ color:var(--bordo-claro); font-weight:700; }
+
+    /* Nosotros */
+    .about{ display:flex; gap:20px; align-items:center; }
+    .about .text{ flex:1; }
+    .about .img{ width:320px; border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
+    .about img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* Galería / Instagram */
+    .gallery{ display:grid; grid-template-columns: repeat(4,1fr); gap:8px; }
+    .gallery img{ width:100%; height:140px; object-fit:cover; border-radius:8px; }
+
+    /* Contacto / Footer */
+    .contact-grid{ display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start; }
+    .contact-card{ background:var(--gris-claro); padding:18px; border-radius:12px; box-shadow:var(--shadow); }
+    footer{ margin-top:28px; padding:18px 0; border-top:1px solid #eee; color:var(--gris); font-size:0.95rem; text-align:center; }
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: repeat(2,1fr); }
+      .gallery{ grid-template-columns: repeat(3,1fr); }
+      .about{ flex-direction:column; }
+      .contact-grid{ grid-template-columns:1fr; }
+    }
+    @media (max-width:600px){
+      header{ flex-direction:column; align-items:flex-start; gap:12px }
+      nav ul{ gap:10px; flex-wrap:wrap }
+      .cards{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: repeat(2,1fr); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Header -->
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">TE</div>
+        <div>
+          <div style="font-weight:700">Tres Empanadas</div>
+          <div style="color:var(--gris);font-size:0.9rem">Monte Hermoso</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a class="btn-wsp" href="https://wa.me/549XXXXXXXXX?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-card">
+        <h1>Empanadas artesanales en Monte Hermoso</h1>
+        <p>Sabores tradicionales y rellenos especiales. Preparadas con ingredientes frescos, hechas con cariño y listas para llevar.</p>
+
+        <div class="cta-group">
+          <a class="btn-primary" href="https://wa.me/549XXXXXXXXX?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Hacé tu pedido</a>
+          <a class="btn-secondary" href="#carta">Ver la carta</a>
+        </div>
+
+        <div style="margin-top:18px;color:var(--gris);font-size:0.95rem">
+          Horario: Lun-Dom 10:00 - 22:00 · Retiro en local / Envíos locales
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- REEMPLAZAR esta imagen por una foto real desde Instagram -->
+        <img src="https://images.unsplash.com/photo-1604908176533-2d6f40a3d4c0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Empanadas destacadas">
+      </div>
+    </section>
+
+    <!-- Carta -->
+    <section id="carta">
+      <h2 style="margin-bottom:12px">Nuestra carta</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Empanada clásica">
+          <h4>Carne tradicional</h4>
+          <div class="price">$220</div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1526863972863-6c1b6a2f7a01?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Empanada">
+          <h4>Jamon y queso</h4>
+          <div class="price">$220</div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Empanada veg">
+          <h4>Verduras (vegana)</h4>
+          <div class="price">$230</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros">
+      <h2 style="margin-bottom:12px">Quiénes somos</h2>
+      <div class="about">
+        <div class="text">
+          <p style="color:var(--gris);margin-bottom:12px">Tres Empanadas nace en Monte Hermoso con la idea de ofrecer empanadas caseras, con masa fresca y rellenos preparados diariamente. Participamos en ferias locales y atendemos pedidos para eventos.</p>
+          <p style="margin-bottom:14px">¿Querés que tu evento tenga empanadas? Consultanos por combos y envíos.</p>
+          <a class="btn-primary" href="mailto:contacto@trempresa.com">Escribinos</a>
+        </div>
+
+        <div class="img">
+          <!-- REEMPLAZAR por foto del local/equipo -->
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Nuestro equipo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería / Instagram -->
+    <section id="galeria">
+      <h2 style="margin-bottom:12px">Galería</h2>
+      <div class="gallery">
+        <!-- Reemplazar estos src por las fotos de Instagram -->
+        <img src="https://images.unsplash.com/photo-1543332164-3b25b6d9a6d6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+      </div>
+      <div style="margin-top:10px">
+        <a href="https://www.instagram.com/tres_empanadasmh" target="_blank" rel="noopener" style="text-decoration:none;color:var(--negro);font-weight:700">Seguí nuestro Instagram</a>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+      <h2 style="margin-bottom:12px">Contacto</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Pedí por WhatsApp</h3>
+          <p style="color:var(--gris); margin-bottom:12px">Hacé tu pedido rápido por WhatsApp y coordinamos retiro o envío.</p>
+          <a class="btn-primary" href="https://wa.me/549XXXXXXXXX?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Enviar WhatsApp</a>
+
+          <div style="margin-top:16px;color:var(--gris);font-size:0.95rem">
+            <div><strong>Tel:</strong> +54 9 XXXXXXXXX</div>
+            <div><strong>Dirección:</strong> Monte Hermoso, Buenos Aires</div>
+            <div><strong>Horario:</strong> Lun-Dom 10:00 - 22:00</div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Formulario</h3>
+          <form onsubmit="alert('Formulario de ejemplo — reemplazar backend'); return false;">
+            <label style="display:block;margin-bottom:8px;color:var(--gris)">Nombre</label>
+            <input style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px" required>
+
+            <label style="display:block;margin-bottom:8px;color:var(--gris)">Teléfono / WhatsApp</label>
+            <input style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px" required>
+
+            <label style="display:block;margin-bottom:8px;color:var(--gris)">Mensaje</label>
+            <textarea style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px" rows="4" required></textarea>
+
+            <button class="btn-primary" type="submit" style="width:100%">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Tres Empanadas — Monte Hermoso · <span style="color:var(--gris)">Hecho con ♥</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
