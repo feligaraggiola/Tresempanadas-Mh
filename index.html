@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tres Empanadas — Monte Hermoso</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">TE</div>
+    <div>
+      <div style="font-weight:800">Tres Empanadas</div>
+      <div class="sub">Monte Hermoso</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:18px">
+    <nav id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#carta">Carta</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galéria</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <button class="btn-wh" onclick="window.open('https://wa.me/5492972416465','_blank')">WhatsApp</button>
+
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main class="wrap" id="inicio">
+
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Comidas<br>Artesanales<br>Monte Hermoso</h1>
+      <p>Sabores tradicionales y rellenos especiales. Preparadas con ingredientes frescos, hechas con cariño y listas para llevar.</p>
+      <div class="cta-row">
+        <button class="btn-primary" onclick="orderAction()">Hacé tu pedido</button>
+        <button class="btn-ghost" onclick="document.getElementById('carta').scrollIntoView({behavior:'smooth'})">Ver la carta</button>
+      </div>
+
+      <div class="info-row" aria-hidden>
+        <div>⏰ Lun - Dom 10:00 - 23:00</div>
+        <div>•</div>
+        <div>📍 Retiro en local / Envío locales</div>
+      </div>
+    </div>
+
+    <aside class="preview" aria-hidden>
+      <div class="placeholder">
+        <!-- simple placeholder icon -->
+        <svg width="90" height="90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="3" stroke="#cfcfcf" stroke-width="1.2" fill="#f2f2f2"/>
+          <path d="M7 14l3-3 2 2 5-5 3 3" stroke="#cfcfcf" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="badge">
+        <div style="font-size:22px">+15</div>
+        <span>Sabores únicos</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- NUESTRA CARTA -->
+  <section class="section" id="carta">
+    <div class="title">Nuestra carta</div>
+    <div class="subtitle">Descubrí nuestros sabores artesanales, preparados cada día con ingredientes de calidad</div>
+
+    <div class="cards" role="list">
+      <div class="card" role="listitem">
+        <div class="img">Placeholder imagen</div>
+        <h4>Empanada de carne</h4>
+        <p>Carne cortada a cuchillo, cebolla y especias. Precio sugerido: $190</p>
+      </div>
+
+      <div class="card" role="listitem">
+        <div class="img">Placeholder imagen</div>
+        <h4>Empanada de pollo</h4>
+        <p>Pollo desmenuzado, verduras salteadas y condimentos caseros. Precio sugerido: $180</p>
+      </div>
+
+      <div class="card" role="listitem">
+        <div class="img">Placeholder imagen</div>
+        <h4>Empanada de jamón y queso</h4>
+        <p>Jamón cocido y queso fundente. Precio sugerido: $170</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+
+
+<section class="section" id="nosotros">
+  <div class="about">
+    <!-- COL IZQUIERDA: MAPA + TARJETA -->
+    <div class="about-img">
+      <div class="map-card-wrapper">
+        <!-- Tarjeta de ubicación -->
+        <div class="loc-card">
+          <h4>Tres Empanadas</h4>
+          <p class="loc-addr">Monte Hermoso, Provincia de Buenos Aires — Argentina<br>
+          Av. Las Malvinas 792</p>
+          <p class="loc-hours">⏰ Lun-Dom: 10:00 - 23:00</p>
+          <a class="loc-btn" href="https://maps.app.goo.gl/eWkkfeHngFscfyZx8" target="_blank" rel="noopener">Llevame ahí!</a>
+        </div>
+
+        <!-- Iframe de Google Maps (usa el embed que quieras reemplazando el src) -->
+        <div class="map-frame">
+          <iframe
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.5284970709217!2d-61.320052822955276!3d-38.980433039065375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x958d52b7f4fabaeb%3A0x3ecbfcab3170f7a8!2sAv.%20las%20Malvinas%20792%2C%20B8135%20Monte%20Hermoso%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1764462944424!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+            width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- fin de quienes somos -->
+
+
+<!--fin de quienes somos-->
+
+  <!-- GALERÍA (placeholders) -->
+  <section class="section" id="galeria">
+    <div class="title">Galería</div>
+    <div class="subtitle">Algunas fotos de nuestras empanadas y eventos</div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px">
+      <div style="background:linear-gradient(180deg,#e9e9e9,#e2e2e2);height:200px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#bdbdbd;border:1px dashed rgba(0,0,0,0.03)">Imagen 1</div>
+      <div style="background:linear-gradient(180deg,#e9e9e9,#e2e2e2);height:200px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#bdbdbd;border:1px dashed rgba(0,0,0,0.03)">Imagen 2</div>
+      <div style="background:linear-gradient(180deg,#e9e9e9,#e2e2e2);height:200px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#bdbdbd;border:1px dashed rgba(0,0,0,0.03)">Imagen 3</div>
+    </div>
+  </section>
+<!--fin de galeria-->
+
+  <!-- CONTACTO -->
+ 
+
+</main>
+<!--fin contacto-->
+
+ <section class="section" id="contacto" style="padding-bottom:6px">
+
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- MENÚ IZQUIERDO -->
+    <div class="footer-left">
+   
+    </div>
+
+    <!-- LOGO CENTRADO -->
+    <div class="footer-center">
+      <img src="img\logo tres empanadas.png" alt="Logo Tres Empanadas" class="footer-logo">
+
+      <!-- ICONOS -->
+      <div class="footer-icons">
+        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="footer-right">
+      <h3>Contacto</h3>
+      <p>tresempanadas@gmail.com</p>
+      <p>Monte Hermoso, Buenos Aires - Argentina</p>
+      <p>Horario: 10:00 a 23:00</p>
+    </div>
+
+  </div>
+
+  <!-- LÍNEA DIVISORIA -->
+  <div class="footer-line"></div>
+
+  <!-- COPYRIGHT -->
+  <p class="footer-copy">© 2025 Tres Empanadas. Todos los derechos reservados.</p>
+</footer>
+
+<!-- IMPORTAR ICONOS -->
+<script src="https://kit.fontawesome.com/a2e0e9c6d7.js" crossorigin="anonymous"></script>
+
+
+ </section>
+</footer>
+
+<script>
+  // simple mobile menu toggle
+  function toggleMenu(){
+    const nav = document.getElementById('mainNav');
+    if(nav.style.display === 'flex' || nav.classList.contains('open')){
+      nav.style.display = '';
+      nav.classList.remove('open');
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.top = '72px';
+      nav.style.right = '18px';
+      nav.style.background = 'white';
+      nav.style.padding = '12px';
+      nav.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)';
+      nav.style.borderRadius = '10px';
+      nav.classList.add('open');
+    }
+  }
+
+  // placeholder 
+  function orderAction(){
+    // open whatsapp or show message
+    window.open('https://wa.me/5492972416465?text=Quiero%20hacer%20un%20pedido','_blank');
+  }
+  function contactAction(){
+    window.open('https://wa.me/5492972416465?text=Hola%2C%20quisiera%20consultar','_blank');
+  }
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function(e){
+    const nav = document.getElementById('mainNav');
+    const btn = document.getElementById('menuBtn');
+    if(!nav) return;
+    if(nav.classList.contains('open') && !nav.contains(e.target) && e.target !== btn){
+      nav.style.display = '';
+      nav.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>

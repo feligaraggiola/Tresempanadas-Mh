@@ -1,0 +1,343 @@
+  :root{
+    --cream:#FBF6F3;
+    --muted:#7b6f6a;
+    --accent:#a83f36; /* rojo quemado */
+    --card:#e9e7e6;
+    --shadow: 0 18px 30px rgba(10,10,10,0.08);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--cream);
+    color:#231815;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  /* HEADER */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 36px;
+    background:transparent;
+    position:sticky;
+    top:0;
+    z-index:40;
+    backdrop-filter: blur(4px);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand .logo{
+    width:56px;height:56px;border-radius:12px;
+    background:linear-gradient(135deg,#c76a61,#a83f36);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;
+    box-shadow: 0 6px 18px rgba(168,63,54,0.18);
+  }
+  .brand .txt{font-weight:700}
+  .brand .sub{font-size:13px;color:var(--muted);margin-top:2px}
+
+  nav{
+    display:flex;
+    gap:22px;
+    align-items:center;
+  }
+  nav a{color:#111;text-decoration:none;font-weight:600}
+  .btn-wh{
+    background:var(--accent);
+    color:white;
+    padding:10px 14px;border-radius:10px;border:0;font-weight:700;
+    box-shadow: 0 6px 18px rgba(168,63,54,0.12);
+  }
+
+  /* RESPONSIVE MENU BTN */
+  .menu-toggle{display:none;border:0;background:transparent;font-size:20px;cursor:pointer}
+
+  /* HERO */
+  .wrap{max-width:1200px;margin:28px auto;padding:18px}
+  .hero{
+    display:grid;
+    grid-template-columns: 1fr 520px;
+    gap:36px;
+    align-items:center;
+    margin-top:8px;
+  }
+
+  .hero-left h1{
+    font-size:84px;
+    line-height:0.95;
+    margin:0 0 18px;
+    font-weight:800;
+    color:#120806;
+  }
+  .hero-left p{
+    color:var(--muted);
+    max-width:640px;
+    margin:0 0 22px;
+    font-size:17px;
+  }
+  .cta-row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+  .btn-primary{
+    background:var(--accent);color:white;padding:14px 20px;border-radius:12px;border:0;font-weight:700;
+    box-shadow: 0 10px 24px rgba(168,63,54,0.14);
+  }
+  .btn-ghost{
+    background:transparent;border:1px solid rgba(0,0,0,0.08);padding:12px 18px;border-radius:12px;font-weight:700;
+    color:#2b1e1a;
+  }
+
+  /* preview placeholder */
+  .preview{
+    background:var(--card);
+    height:380px;
+    border-radius:16px;
+    box-shadow: var(--shadow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,0.03);
+  }
+  .preview .placeholder{
+    width:85%;
+    height:80%;
+    background:linear-gradient(180deg,#eaeaea,#e0dfdf);
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;color:#b8b8b8;
+    font-weight:700;
+    border:1px dashed rgba(0,0,0,0.03);
+  }
+
+  /* +15 badge */
+  .badge{
+    position:absolute;right:18px;bottom:18px;background:var(--accent);color:white;padding:14px;border-radius:12px;font-weight:800;
+    box-shadow:0 8px 20px rgba(168,63,54,0.16);text-align:center;
+  }
+  .badge span{display:block;font-size:13px;font-weight:600;opacity:0.9}
+
+  /* small info row under hero */
+  .info-row{display:flex;gap:24px;margin-top:18px;color:var(--muted);font-size:14px;align-items:center}
+
+  /* SECTIONS */
+  section.section{
+    margin-top:48px;
+    padding:34px 0;
+    background:transparent;
+  }
+  .section .title{font-size:40px;text-align:center;margin:8px 0 8px;font-weight:800}
+  .section .subtitle{text-align:center;color:var(--muted);max-width:860px;margin:6px auto 20px}
+
+  /* Cards row (Nuestra carta) */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:18px;
+  }
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:16px;
+    min-height:240px;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(0,0,0,0.03);
+  }
+  .card .img{background:linear-gradient(180deg,#e9e9e9,#e2e2e2);height:150px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#bdbdbd;font-weight:700;border:1px dashed rgba(0,0,0,0.03)}
+  .card h4{margin:12px 0 6px}
+  .card p{margin:0;color:var(--muted)}
+
+  /* Quiénes somos */
+  .about{
+    display:grid;
+    grid-template-columns: 540px 1fr;
+    gap:28px;
+    align-items:center;
+  }
+  
+   .about .about-img {
+  padding: 0;
+  background: transparent;
+  height: 360px;
+  border-radius: 16px;
+  position: relative;
+  overflow: visible;
+  display: block;
+}
+
+/* envoltorio que contiene mapa y tarjeta */
+.map-card-wrapper{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display:block;
+  border-radius:16px;
+}
+
+/* iframe: map */
+.map-frame{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 30px rgba(10,10,10,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* tarjeta amarilla tipo Guchini (ubicación) */
+.loc-card{
+  position: absolute;
+  left: 800px;
+  top: 28px;
+  width: 320px;
+  background: #f4b83a; /* color tipo amarillo */
+  color: #fff;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 18px 30px rgba(10,10,10,0.12);
+  z-index: 5;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* textos dentro de la tarjeta */
+.loc-card h4{ margin:0;font-size:20px;font-weight:800 }
+.loc-addr{ margin:6px 0;color:rgba(255,255,255,0.95);font-weight:600 }
+.loc-hours{ color:rgba(255,255,255,0.95); font-size:14px; margin:0 0 6px 0; }
+
+/* botón en la tarjeta */
+.loc-btn{
+  margin-top:10px;
+  display:inline-block;
+  text-align:center;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  padding:10px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* responsive: en pantallas chicas la tarjeta baja y se fija como bloque arriba del mapa */
+@media (max-width:900px){
+  .loc-card{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 12px;
+  }
+  .map-frame{ height: 300px; }
+}
+  .about h3{font-size:44px;margin:0 0 10px;font-weight:800}
+  .about p{color:var(--muted);margin-bottom:18px}
+  .features-inline{display:flex;gap:20px;margin-top:14px}
+  .feat{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .feat .icon{
+    width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(168,63,54,0.08);color:var(--accent)
+  }
+  .about .btn-secondary{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:700;margin-top:12px}
+
+
+  /*foote*/
+  .footer {
+  background: #a83f36;
+  color: white;
+  padding: 40px 20px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-logo {
+  width: 180px;  /* AJUSTA EL TAMAÑO DEL LOGO */
+  margin-bottom: 20px;
+  left: 60px;
+  position: relative
+}
+
+.footer-icons a {
+  font-size: 28px;
+  color: white;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  opacity: 0.7;
+}
+
+.footer-right h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.footer-right p {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 30px 0 15px;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+
+  /* RESPONSIVE */
+  @media (max-width:1100px){
+    .hero{grid-template-columns:1fr 420px}
+    .about{grid-template-columns:1fr}
+  }
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr}
+    .preview{order:-1;height:320px}
+    .hero-left h1{font-size:48px}
+    .cards{grid-template-columns:1fr}
+    nav{display:none}
+    .menu-toggle{display:inline-block}
+  }
+  @media (max-width:520px){
+    .hero-left h1{font-size:40px}
+    .brand .logo{width:48px;height:48px}
+    .badge{right:12px;bottom:12px;padding:10px}
+  }
+
+  /* tiny helper for placeholder icon */
+  .placeholder svg{opacity:0.5}
